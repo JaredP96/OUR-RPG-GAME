@@ -57,12 +57,12 @@ scr_movement();
 //ANIMATION on key release
 if keyboard_check_released(ord('D')){
     sprite_index = spr_player_still_right;
-    image_speed = .08;
+    image_speed = .12;
 }
 
 if keyboard_check_released(ord('A')){
     sprite_index = spr_player_still_left;
-    image_speed = .08;
+    image_speed = .12;
 }
 
 if keyboard_check_released(ord('S')){
@@ -72,7 +72,7 @@ if keyboard_check_released(ord('S')){
 
 if keyboard_check_released(ord('W')){
     sprite_index = spr_player_up;
-    image_speed = .08;
+    image_speed = .07;
 }
 
 //PLAYER MOVEMENT
@@ -110,12 +110,14 @@ if MOVELEFT{
     sprite_index = spr_player_left;
     if place_free(x-4,y){
         x -= WALKSPD;
+        image_speed = .12;
     }
 }
 
 if MOVELEFT &amp; RUN{
     if place_free(x-4,y){
         x -= RUNSPD;
+        image_speed = .22;
     }
 }
 
@@ -124,12 +126,14 @@ if MOVERIGHT{
     sprite_index = spr_player_right;
     if place_free(x+4,y){
         x += WALKSPD;
+        image_speed = .12;
     }
 }
 
 if MOVERIGHT &amp; RUN{
     if place_free(x+4,y){
         x += RUNSPD;
+        image_speed = .22;
     }
 }
 
